@@ -10,8 +10,6 @@ An advanced algorithmic Minesweeper bot that plays Expert mode on [minesweeperon
 
 ## 🧠 How It Works
 
-This bot doesn't use machine learning or guesswork — it uses **pure mathematics** to solve Minesweeper optimally.
-
 
 ### Browser Automation
 
