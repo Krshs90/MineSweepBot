@@ -1,4 +1,4 @@
-# 🤖 MineSweepBot — The Stockfish of Minesweeper
+# MineSweepBot
 
 An advanced algorithmic Minesweeper bot that plays Expert mode on [minesweeperonline.com](https://minesweeperonline.com/) with mathematically perfect precision.
 
@@ -12,19 +12,6 @@ An advanced algorithmic Minesweeper bot that plays Expert mode on [minesweeperon
 
 This bot doesn't use machine learning or guesswork — it uses **pure mathematics** to solve Minesweeper optimally.
 
-### Core Algorithm
-
-1. **Deterministic Pass** — Scans all numbered cells and instantly identifies tiles that are 100% safe or 100% mines using simple constraint logic.
-
-2. **CSP Island Decomposition** — Groups all frontier cells (unknown cells touching numbers) into independent "islands" using graph connectivity. Each island is solved separately, preventing exponential blowup.
-
-3. **Exhaustive Backtracking** — For each island, the solver tests every valid mine configuration against the numbered constraints, collecting exact statistics.
-
-4. **Global Subset-Sum DP** — Combines island results using polynomial multiplication and cross-references against the global mine count (99 mines in Expert). This produces the **exact probability** of a mine at every single unrevealed tile on the board — including "ocean" cells (tiles not touching any number).
-
-5. **Mathematically Perfect Guesses** — When forced to guess, the bot clicks the tile with the absolute lowest mine probability across the entire board, calculated to exact decimal precision.
-
-6. **O(N) Heuristic Fallback** — If an island exceeds 30,000 backtracking iterations (NP-Complete edge case), the solver gracefully falls back to a fast local probability heuristic to keep execution under 2ms.
 
 ### Browser Automation
 
